@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+ 
+{% block title %}Add New Pupil Records{% endblock title %}
+ 
+{% block content %}
+<div class="col-md-12">
+    <h4>Django CRUD (Create Read Update Delete) Example - Bootstrap Datatable GRID</h4>  
+ <form method="POST" class="post-form" action="/updatepupil/{{pupil.id}}">  
+   {% csrf_token %}  
+  <div class="container">  
+ <br>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <h3>Update Details</h3>  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Pupil Id:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ pupil.id }}"/>  
+  </div>  
+   </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Pupil Name:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="name" id="id_name" required maxlength="100" value="{{ pupil.name }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Pupil Email:</label>  
+  <div class="col-sm-4">  
+   <input type="email" class="form-control" name="email" id="id_email" required maxlength="254" value="{{ pupil.email }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Pupil Contact:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="contact" id="id_contact" required maxlength="15" value="{{ pupil.contact }}" />  
+  </div>  
+   </div>  
+  <div class="form-group row">  
+  <label class="col-sm-1 col-form-label"></label>  
+  <div class="col-sm-4">  
+  <button type="submit" class="btn btn-success btn-lg">Update</button>  
+  </div>  
+   </div>  
+  </div>  
+ </form>  
+{% endblock content %}
